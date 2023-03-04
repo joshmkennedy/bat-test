@@ -1,261 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Bat Test</title>
-	<style>
-		body{
-			background-color:black;
-			color:white;
-			margin:0;
-			font-family:Helvetica;
-			font-weight:200;
-		}
-		header{
-			background-color: #26002f;
-			color:rebeccapurple;
-			padding:.5rem 1rem;
-		}
-		h1{
-			margin:0;	
-		}
-		.container{
-			padding:2rem;
-			color:magenta;
-			max-width:900px;
-			margin-inline:auto;
-		}
-		h2{
-			font-weight:600;
-			text-align:center;
-			letter-spacing:1.2px;
-		}
-		ul{
-			margin:0;
-			list-style:none;
-			padding:0;
-		}
-		li{
-			margin:0;
-		}
-		.questions{
-			padding-block:1rem;
-			height:100%;
-		}
-		.questions ul{
-			display:grid;
-			grid-template-row:1fr;
-			grid-template-column:1fr;
-			height:100%;
-		}
-		.questions >ul > *{
-			background:black;
-			text-align:center;
-			grid-row:1/-1;
-			grid-column:1/-1;
-		}
-		.question{
-			width:100%;
-			height:100%;
-			color:purple;
-			font-size:1.5rem;
-		}
-		fieldset{
-			margin:0;
-			padding:0;
-			border-color:purple;
-			display:inline-flex;
-				flex-direction:column;
-		}
-		label{
-			padding:2rem;
-			display:block;
-		}
-		label [type="radio"]{
-			visibility:hidden;
-			position:absolute;
-		}
-		label:hover{
-			background:rebeccapurple;
-			color:white;
-		}
-		 label:has(:checked){
-			background-color:purple;
-			color:white;
-		}
-		 .question{
-				display:none;
-		 }
-		 .question[data-active="true"]{
-				display:unset;
-		 }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bat Test</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        margin: 0;
+        font-family: Helvetica;
+        font-weight: 200;
+      }
+      header {
+        background-color: #26002f;
+        color: rebeccapurple;
+        padding: 0.5rem 1rem;
+      }
+      h1 {
+        margin: 0;
+      }
+      .container {
+        padding: 2rem;
+        color: magenta;
+        max-width: 900px;
+        margin-inline: auto;
+      }
 
-	</style>
-</head>
-<body>
-	<header>
-		<h1>Bat test</h1>	
-	</header>
-	<div class="container">
-		<h2>Answer these questions</h2>
-		<form class="questions"  action="">
-			<ul>
-				<li class="question" data-active="true">
-					<h3>Do bats use echo location?</h3>
-					<fieldset data-answer="yes">
-						<label for="1-1">
-							<input type="radio" value="yes" id="1-1" name="question-1">
-							<span>yes</span>
-						</label>
-						<label for="1-2">
-							<input type="radio" id="1-2" value="no" name="question-1">
-							<span>no</span>
-						</label>
-					</fieldset>
-				</li>
-				<li class="question">
-					<h3>Are bats mammals?</h3>
-					<fieldset data-answer="yes">
-						<label for="2-1">
-							<input type="radio" value="yes" id="2-1" name="question-2">
-							<span>yes</span>
-						</label>
-						<label for="2-2">
-							<input type="radio" id="2-2" value="no" name="question-2">
-							<span>no</span>
-						</label>
-					</fieldset>
-				</li>
-				<li class="question">
-					<h3>Do bats fly?</h3>
-					<fieldset data-answer="yes">
-						<label for="3-1">
-							<input type="radio" value="yes" id="3-1" name="question-3">
-							<span>yes</span>
-						</label>
-						<label for="3-2">
-							<input type="radio" id="3-2" value="no" name="question-3">
-							<span>no</span>
-						</label>
-					</fieldset>
-				</li>
-				<li class="question">
-					<h3>Are bats blind?</h3>
-					<fieldset data-answer="no">
-						<label for="4-1">
-							<input type="radio" value="yes" id="4-1" name="question-4">
-							<span>yes</span>
-						</label>
-						<label for="4-2">
-							<input type="radio" id="4-2" value="no" name="question-4">
-							<span>no</span>
-						</label>
-					</fieldset>
-				</li>
-				<li class="question">
-					<h3>Are bats the only mammals that can fly?</h3>
-					<fieldset data-answer="yes">
-						<label for="5-1">
-							<input type="radio" value="yes" id="5-1" name="question-5">
-							<span>yes</span>
-						</label>
-						<label for="5-2">
-							<input type="radio" id="5-2" value="no" name="question-5">
-							<span>no</span>
-						</label>
-					</fieldset>
-				</li>
-				<li class="question">
-					<h3>Do bats feed on insects only?</h3>
-					<fieldset data-answer="no">
-						<label for="6-1">
-							<input type="radio" value="yes" id="6-1" name="question-6">
-							<span>yes</span>
-						</label>
-						<label for="6-2">
-							<input type="radio" id="6-2" value="no" name="question-6">
-							<span>no</span>
-						</label>
-					</fieldset>
-				</li>
-				<li class="question">
-					<h3>Do bats carry diseases like rabies?</h3>
-					<fieldset data-answer="yes">
-						<label for="7-1">
-							<input type="radio" value="yes" id="7-1" name="question-7">
-							<span>yes</span>
-						</label>
-						<label for="7-2">
-							<input type="radio" id="7-2" value="no" name="question-7">
-							<span>no</span>
-						</label>
-					</fieldset>
-				</li>
-				<li class="question">
-					<h3>Are bats nocturnal?</h3>
-					<fieldset data-answer="yes">
-						<label for="8-1">
-							<input type="radio" value="yes" id="8-1" name="question-8">
-							<span>yes</span>
-						</label>
-						<label for="8-2">
-							<input type="radio" id="8-2" value="no" name="question-8">
-							<span>no</span>
-						</label>
-					</fieldset>
-				</li>
-				<li class="question" >
-					<h3>Do all bats use echolocation?</h3>
-					<fieldset data-answer="yes">
-						<label for="9-1">
-							<input type="radio" value="yes" id="9-1" name="question-9">
-							<span>yes</span>
-						</label>
-						<label for="9-2">
-							<input type="radio" value="no" id="9-2" name="question-9">
-							<span>no</span>
-						</label>
-					</fieldset>
-				</li>
-				<li class="question">
-					<h3>Are bats a threat to humans?</h3>
-					<fieldset data-answer="10-1">
-						<label for="10-1">
-							<input type="radio" id="10-1" value="yes" name="question-10">
-							<span>yes</span>
-						</label>
-						<label for="10-2">
-							<input type="radio" id="10-2" value="no" name="question-10">
-							<span>no</span>
-						</label>
-					</fieldset>
-				</li>
-			</ul>
-		</form>
-	</div>
-	<script>
-		document.addEventListener('DOMContentLoaded', init);	
-		function init(){
-			const form = document.querySelector('form');
-			form.addEventListener('change', presentAnswerAndProceed);
-		}
-		function presentAnswerAndProceed(e){
-			const el = e.target	
-			const answer = el.closest(`[data-answer]`)?.dataset.answer
-			const value = el.value
-			if(answer == value){
-				window.alert("You are RIGHT 🥳")
-			} else {
-				window.alert("You are WRONG 💩")
+			body:has(.box:not(.hide)) .container{
+				opacity:.5;
+				pointer-events:none;
 			}
-			const old = document.querySelector("[data-active]")
-			delete old.dataset.active
-			if(old.nextElementSibling){
-				old.nextElementSibling.dataset.active = "true"
-			} else {
-				window.alert("you are all done")
+      h2 {
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 1.2px;
+      }
+      ul {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin: 0;
+      }
+      .questions {
+        padding-block: 1rem;
+        height: 100%;
+      }
+      .questions ul {
+        display: grid;
+        grid-template-row: 1fr;
+        grid-template-column: 1fr;
+        height: 100%;
+      }
+      .questions > ul > * {
+        background: black;
+        text-align: center;
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+      }
+      .question {
+        width: 100%;
+        height: 100%;
+        color: purple;
+        font-size: 1.5rem;
+      }
+      fieldset {
+        margin: 0;
+        padding: 0;
+        border-color: purple;
+        display: inline-flex;
+        flex-direction: column;
+      }
+      label {
+        padding: 2rem;
+        display: block;
+      }
+      label [type="radio"] {
+        visibility: hidden;
+        position: absolute;
+      }
+      label:hover {
+        background: rebeccapurple;
+        color: white;
+      }
+      label:has(:checked) {
+        background-color: purple;
+        color: white;
+      }
+      .question {
+        display: none;
+      }
+      .question[data-active="true"] {
+        display: unset;
+      }
+			.box {
+				width: 100px;
+				text-align: center;
+				position:fixed;
+				left:50%;
+				top:50%;
+				z-index:99;
+				transform:translate(-50%, -50%);
+				padding:.25rem;
 			}
-		}
-	</script>
-</body>
+			.you-win-box {
+				background-color: purple;
+			}
+			.you-loose-box {
+				background-color: hotpink;
+			}
+			.box button{
+				background:black;
+				color:white;
+				font-weight:bold;
+				width:100%;
+				border:1px solid transparent;
+				padding-block:.25rem;
+			}
+			.box button:hover{
+				background:white;
+			}
+			.hide {
+				display:none;
+			}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Bat test</h1>
+    </header>
+    <div class="you-win-box box hide">
+      <!-- Charlie put code here -->
+      <h3>yes!</h3>
+      <p>😜</p>
+			<button>Next</button>
+    </div>
+    <div class="you-loose-box box hide">
+      <!-- Charlie put code here -->
+      <h3>NO!</h3>
+      <p>💩</p>
+			<button>Next</button>
+    </div>
+    <div class="container">
+    	<h2>Answer these questions</h2>
+    	<form class="questions"  action="">
+    		<ul>
+    			<li class="question" data-active="true">
+    				<h3>Do bats use echo location?</h3>
+    				<fieldset data-answer="yes">
+    					<label for="1-1">
+    						<input type="radio" value="yes" id="1-1" name="question-1">
+    						<span>yes</span>
+    					</label>
+    					<label for="1-2">
+    						<input type="radio" id="1-2" value="no" name="question-1">
+    						<span>no</span>
+    					</label>
+    				</fieldset>
+    			</li>
+    			<li class="question">
+    				<h3>Are bats mammals?</h3>
+    				<fieldset data-answer="yes">
+    					<label for="2-1">
+    						<input type="radio" value="yes" id="2-1" name="question-2">
+    						<span>yes</span>
+    					</label>
+    					<label for="2-2">
+    						<input type="radio" id="2-2" value="no" name="question-2">
+    						<span>no</span>
+    					</label>
+    				</fieldset>
+    			</li>
+    			<li class="question">
+    				<h3>Do bats fly?</h3>
+    				<fieldset data-answer="yes">
+    					<label for="3-1">
+    						<input type="radio" value="yes" id="3-1" name="question-3">
+    						<span>yes</span>
+    					</label>
+    					<label for="3-2">
+    						<input type="radio" id="3-2" value="no" name="question-3">
+    						<span>no</span>
+    					</label>
+    				</fieldset>
+    			</li>
+    			<li class="question">
+    				<h3>Are bats blind?</h3>
+    				<fieldset data-answer="no">
+    					<label for="4-1">
+    						<input type="radio" value="yes" id="4-1" name="question-4">
+    						<span>yes</span>
+    					</label>
+    					<label for="4-2">
+    						<input type="radio" id="4-2" value="no" name="question-4">
+    						<span>no</span>
+    					</label>
+    				</fieldset>
+    			</li>
+    			<li class="question">
+    				<h3>Are bats the only mammals that can fly?</h3>
+    				<fieldset data-answer="yes">
+    					<label for="5-1">
+    						<input type="radio" value="yes" id="5-1" name="question-5">
+    						<span>yes</span>
+    					</label>
+    					<label for="5-2">
+    						<input type="radio" id="5-2" value="no" name="question-5">
+    						<span>no</span>
+    					</label>
+    				</fieldset>
+    			</li>
+    			<li class="question">
+    				<h3>Do bats feed on insects only?</h3>
+    				<fieldset data-answer="no">
+    					<label for="6-1">
+    						<input type="radio" value="yes" id="6-1" name="question-6">
+    						<span>yes</span>
+    					</label>
+    					<label for="6-2">
+    						<input type="radio" id="6-2" value="no" name="question-6">
+    						<span>no</span>
+    					</label>
+    				</fieldset>
+    			</li>
+    			<li class="question">
+    				<h3>Do bats carry diseases like rabies?</h3>
+    				<fieldset data-answer="yes">
+    					<label for="7-1">
+    						<input type="radio" value="yes" id="7-1" name="question-7">
+    						<span>yes</span>
+    					</label>
+    					<label for="7-2">
+    						<input type="radio" id="7-2" value="no" name="question-7">
+    						<span>no</span>
+    					</label>
+    				</fieldset>
+    			</li>
+    			<li class="question">
+    				<h3>Are bats nocturnal?</h3>
+    				<fieldset data-answer="yes">
+    					<label for="8-1">
+    						<input type="radio" value="yes" id="8-1" name="question-8">
+    						<span>yes</span>
+    					</label>
+    					<label for="8-2">
+    						<input type="radio" id="8-2" value="no" name="question-8">
+    						<span>no</span>
+    					</label>
+    				</fieldset>
+    			</li>
+    			<li class="question" >
+    				<h3>Do all bats use echolocation?</h3>
+    				<fieldset data-answer="yes">
+    					<label for="9-1">
+    						<input type="radio" value="yes" id="9-1" name="question-9">
+    						<span>yes</span>
+    					</label>
+    					<label for="9-2">
+    						<input type="radio" value="no" id="9-2" name="question-9">
+    						<span>no</span>
+    					</label>
+    				</fieldset>
+    			</li>
+    			<li class="question">
+    				<h3>Are bats a threat to humans?</h3>
+    				<fieldset data-answer="10-1">
+    					<label for="10-1">
+    						<input type="radio" id="10-1" value="yes" name="question-10">
+    						<span>yes</span>
+    					</label>
+    					<label for="10-2">
+    						<input type="radio" id="10-2" value="no" name="question-10">
+    						<span>no</span>
+    					</label>
+    				</fieldset>
+    			</li>
+    		</ul>
+    	</form>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", init);
+      function init() {
+				window.history.replaceState(null,null,window.location.origin)
+        const form = document.querySelector("form");
+        form.addEventListener("change", presentAnswerAndProceed);
+				document.querySelectorAll('.box button').forEach((el)=>el.addEventListener('click', hideBox))
+      }
+      function presentAnswerAndProceed(e) {
+        const el = e.target;
+        const answer = el.closest(`[data-answer]`)?.dataset.answer;
+        const value = el.value;
+        if (answer == value) {
+					showWin()
+        } else {
+					showLoose()
+        }
+        const old = document.querySelector("[data-active]");
+        delete old.dataset.active;
+        if (old.nextElementSibling) {
+          old.nextElementSibling.dataset.active = "true";
+        } else {
+          window.alert("you are all done");
+
+					window.location.href = window.location.href + "?again"
+        }
+      }
+
+			function showLoose(){
+				document.querySelector('.you-loose-box').classList.remove('hide')
+			}
+			function showWin(){
+				document.querySelector('.you-win-box').classList.remove('hide')
+			}
+			function hideBox(e){
+				const el = e.currentTarget
+				const box = el.closest('.box')
+				box.classList.add('hide')
+			}
+
+
+
+    </script>
+  </body>
 </html>
